@@ -1,8 +1,8 @@
 
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect} from "react";
 
 function Clicker() {
-  const firstRenderRef = useRef(true);
+  // const firstRenderRef = useRef(true);
   const [count, setCount] = useState(0);
 
   const increment = () => {
@@ -15,10 +15,10 @@ function Clicker() {
 
   useEffect(() => {
     //данная зависимость позволяет исключить двойной вызов useEffect
-    if (firstRenderRef.current){
-      firstRenderRef.current = false;
-      return;
-    }
+    // if (firstRenderRef.current){
+    //   firstRenderRef.current = false;
+    //   return;
+    // }
     console.log('Hello useEffect', count);
 
     return () => console.log('Goodbye')
