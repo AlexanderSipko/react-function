@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  margin: 5px 0px 5px 38px;
+}
+
+.RenderList {
+  max-width: 500px;
+  background-color: rgb(42, 220, 214);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.componentsShow {
+  text-align: center;
+  background-color: rgb(35, 194, 189);
+  margin-left: 5px;
+  padding: 5px 5px 15px 15px;
+  border-radius: 5px;
+}
+
+.timerSpan {
+  margin: 0 10px 0 10px;
+}

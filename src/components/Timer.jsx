@@ -1,58 +1,53 @@
-import React from 'react';
 
-export default class Timer extends React.Component {
+import React from "react"
 
-    state = {
-        calculate:0,
-        isCounting:false
-    }
-
-    componentDidMount() {
-        const userCount = localStorage.getItem('count');
-        if (userCount) this.setState({ calculate: +userCount });
-    }
-    
-    componentDidUpdate() {
-        localStorage.setItem('count', this.state.calculate);
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.counterId);
-        this.handlerStop();
-    }
-
-    handlerStart = () => {
-        clearInterval(this.counterId );
-
-        this.setState({isCounting:!this.state.isCounting});
-
-        this.counterId =  setInterval(() => {
-            this.setState({calculate: this.state.calculate + 1})
-        }, 1000);
-    }
-
-    handlerStop = () => {
-        this.setState({isCounting:!this.state.isCounting});
-        clearInterval(this.counterId )
-    }
-
-    handlerReset = () => {
-        clearInterval(this.counterId )
-        this.setState({calculate: 0})
-    }
-
-    render() {
-        return (
-            <div className="Timer">
-                <h1>React Timer</h1>
-                { this.state.isCounting? (
-                    <button onClick={ this.handlerStop } >Stop</button>
-                ):(
-                    <button onClick={ this.handlerStart } >Start</button>
-                )}
-                <p>{ this.state.calculate }</p>
-                <button onClick={ this.handlerReset } >Reset</button>
-            </div>
-        );
-    }
+function getDefaultValue() {
+    const userCount = localStorage.getItem('count');
+    return userCount? +userCount: 0;
 }
+
+function TimerF () {
+
+    const [seconds, setSeconds] = React.useState(getDefaultValue())
+    const [isActive, setIsActive] = React.useState(false)
+    
+    function toggleActive() {
+        setIsActive(!isActive)
+    }
+
+    function reset() {
+        setIsActive(false)
+        setSeconds(0)
+    }
+
+    React.useEffect(() => {
+        let idInterval = null;
+        if (isActive) {
+            idInterval = setInterval(() => {
+                setSeconds(seconds => +seconds + 1);
+            }, 1000)
+        } else if (!isActive) {
+            clearInterval(idInterval)
+        }
+        return () => clearInterval(idInterval)
+    }, [isActive])
+
+    React.useEffect(() => {
+        localStorage.setItem('count', seconds);
+    }, [seconds])
+
+    return (
+        <div>
+            {isActive? (
+                <button onClick={toggleActive} >Stop</button>
+            ):(
+                <button onClick={toggleActive} >Start</button>
+            )} 
+            <span className="timerSpan">{ seconds }</span>
+            <button onClick={reset} >Reset</button>
+        </div>
+    )
+}
+
+
+export default TimerF
