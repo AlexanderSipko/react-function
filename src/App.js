@@ -1,6 +1,9 @@
 
 import React, {useState} from "react";
 import Clicker from './components/Clicker'
+import WithRef from './components/Ref'
+// import Timer from './components/Timer'
+import TimerF from './components/TimerHouck'
 
 function App() {
 
@@ -11,7 +14,9 @@ function App() {
     <div className="App">
       <button onClick={() => setClicker(!isClicker)}>Toggle clicker</button>
       {isClicker && <Clicker/>}
-      <h>test</h>
+      <WithRef />
+      {/* <Timer/> */}
+      <TimerF/>
     </div>
   );
 }

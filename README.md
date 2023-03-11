@@ -6,3 +6,5 @@
 </p>
 
 ## Кликер, жизненный цикл, использование ref, рефакторинг
+
+[link to deploy gh-pages](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
