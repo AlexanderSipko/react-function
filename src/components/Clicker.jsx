@@ -29,6 +29,7 @@ function Clicker() {
       <h1>Start Learn Function React</h1>
         <button onClick={increment}> + </button>
           <span style={{display:'inline-block', margin:'0 0.5rem'}}>{count}</span>
+          <h>test </h>
         <button onClick={decrement}> - </button>
     </div>
   );

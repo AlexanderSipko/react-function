@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <button onClick={() => setClicker(!isClicker)}>Toggle clicker</button>
       {isClicker && <Clicker/>}
+      <h>test</h>
     </div>
   );
 }
