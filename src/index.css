@@ -16,6 +16,23 @@ body {
   padding: 5px;
 }
 
+ol {
+  cursor: pointer;
+  text-align: left;
+}
+
+li {
+  position: relative;
+}
+
+.AddNewBook {
+  cursor: pointer;
+}
+
+.AddNewBook:hover {
+  color: rgb(84, 84, 84);
+}
+
 .NameButton {
   display: flex;
   justify-content: space-between;

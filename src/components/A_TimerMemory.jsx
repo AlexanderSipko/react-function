@@ -43,7 +43,7 @@ function TimerMemory () {
     }, [second])
 
     return (
-
+        
         <div>
             <h3>Simple timer, start/stop and reset function. However create and write localStorage</h3>
             {!isActive? (

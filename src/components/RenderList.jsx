@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Click from "./B_Click"
 import TimerMemory from "./A_TimerMemory"
+import Books from './Books'
 
 function ChangeText(e) {
     var btns = document.querySelectorAll('button')
@@ -8,25 +8,25 @@ function ChangeText(e) {
     btns.forEach(function(btn) {
         if (btn !== e.target) {
             btn.textContent = 'Show'
+        } else {
+            (e.target.textContent === 'Show')? (
+                e.target.textContent = 'Hidden'
+            ) : (
+                e.target.textContent = 'Show'
+            )
         }}
     )
-
-    if (e.target.textContent === 'Show') {
-        e.target.textContent = 'Hidden'
-    } else {
-        e.target.textContent = 'Show'
-    }
 }
 
 function RenderComponents () {
+
     const allComponents = [
-        { key: "1", component: <Click />, name: "1 Clicker" },
+        { key: "1", component: <Books />, name: "1 Books / useContext /" },
         { key: "2", component: <TimerMemory />, name: "2 TimerMemory" }
       ];
 
     const [hidden, setHidden] = React.useState(false)
     const [key, setKey] = React.useState(null)
-
 
     function handlerHidden(currenKey) {
 
@@ -48,6 +48,7 @@ function RenderComponents () {
     useEffect (() => {
         var btns = document.querySelectorAll('button')
         
+
         btns.forEach(function(btn) {
             btn.addEventListener('click', (e) => ChangeText(e))}
         )

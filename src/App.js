@@ -5,9 +5,9 @@ import RenderList from './components/RenderList'
 function App() {
 
   return (
-    <div className="App">
-      <RenderList/>
-    </div>
+      <div className="App">
+          <RenderList/>
+      </div>
   );
 }
 
