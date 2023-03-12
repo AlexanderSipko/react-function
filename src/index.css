@@ -12,8 +12,14 @@ code {
     monospace;
 }
 
-.App {
-  margin: 5px 0px 5px 38px;
+body {
+  padding: 5px;
+}
+
+.NameButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .RenderList {

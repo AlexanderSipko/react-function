@@ -7,7 +7,7 @@ function TimerMemory () {
     const [second, setSecond] = React.useState(0)
     
     const handlerTimer = () =>{
-        setActive(!isActive);
+        setActive(isActive => !isActive);
     }
 
     const handlerReset = () =>{
