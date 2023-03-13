@@ -2,22 +2,6 @@ import React, { useEffect } from "react";
 import TimerMemory from "./A_TimerMemory"
 import Books from './Books'
 
-function ChangeText(e) {
-    var btns = document.querySelectorAll('button')
-        
-    btns.forEach(function(btn) {
-        if (btn !== e.target) {
-            btn.textContent = 'Show'
-        } else {
-            (e.target.textContent === 'Show')? (
-                e.target.textContent = 'Hidden'
-            ) : (
-                e.target.textContent = 'Show'
-            )
-        }}
-    )
-}
-
 function RenderComponents () {
 
     const allComponents = [
@@ -79,3 +63,19 @@ function RenderComponents () {
 }
 
 export default RenderComponents
+
+function ChangeText(e) {
+    var btns = document.querySelectorAll('button')
+        
+    btns.forEach(function(btn) {
+        if (btn !== e.target) {
+            btn.textContent = 'Show'
+        } else {
+            (e.target.textContent === 'Show')? (
+                e.target.textContent = 'Hidden'
+            ) : (
+                e.target.textContent = 'Show'
+            )
+        }}
+    )
+}

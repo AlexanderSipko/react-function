@@ -21,7 +21,7 @@ ol {
   text-align: left;
 }
 
-li {
+.BlockAddBock {
   position: relative;
 }
 
@@ -31,6 +31,26 @@ li {
 
 .AddNewBook:hover {
   color: rgb(84, 84, 84);
+}
+
+.overBlock {
+  background-color: black;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.FormAddBook {
+  position: absolute;
+  border-radius: 5px;
+  top: -90px;
+  width: 100%;
+  background-color: #18d8d1;
+  z-index: 9999;
 }
 
 .NameButton {

@@ -1,7 +1,7 @@
 import {CustomContext} from "../hooks/Context"
 import React, { useContext } from "react"
 import Book from './Book'
-
+import AddBooks from "./AddBook";
 
 function Books() {
 
@@ -15,7 +15,7 @@ function Books() {
                     }) }
                 </ol>
 
-                {/* <h3 className="AddNewBook">Add New Book</h3> */}
+                <AddBooks/>
             </div> 
     )
 }
