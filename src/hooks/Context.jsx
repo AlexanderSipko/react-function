@@ -13,14 +13,15 @@ export const Context = (props) => {
 
     const addBook = (book) => {
         setBooks([book, ...books])
-        setNewID(books.length)
+        setNewID(newID => +newID + 1)
     }
 
     const removeBook = (id) => {
         setBooks(books.filter(item => item.id !== id.id))
+        setNewID(newID => +newID - 1)
     }
 
-    const getNewID = (id) => {
+    const getNewID = () => {
         return +newID + 1
     }
 

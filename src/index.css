@@ -29,8 +29,26 @@ ol {
   cursor: pointer;
 }
 
+.Remove {
+  cursor: pointer;
+  text-align: right;
+  margin-right: 10px;
+  color: gray;
+}
+
+.Remove:hover {
+  color: black;
+}
+
 .AddNewBook:hover {
   color: rgb(84, 84, 84);
+}
+
+.NewId { 
+  color: gray;
+  text-align: right;
+  margin-right: 10px;
+  font-size: 16px;
 }
 
 .overBlock {
