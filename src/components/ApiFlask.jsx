@@ -1,7 +1,7 @@
 
 import React from "react";
 
-class MyComponent extends React.Component {
+class ApiFlask extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -10,6 +10,20 @@ class MyComponent extends React.Component {
         items: []
       };
     }
+
+    // create 4 function to manipulate ai data
+  
+    // get https://py-todo-api-avsipko.amvera.io/todo
+    // all list
+
+    // get https://py-todo-api-avsipko.amvera.io/todo/<id:int>
+    // write
+
+    // post https://py-todo-api-avsipko.amvera.io/todo
+    // add new write
+
+    // put https://py-todo-api-avsipko.amvera.io/todo/<id:int>
+    // update write
 
     componentDidMount() {
         fetch('https://py-todo-api-avsipko.amvera.io/todo')
@@ -41,16 +55,19 @@ class MyComponent extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
-          {items.map(item => (
-            <li key={item.id}>
-              {item.id} - {item.text}, {item.done? 'done': "don't done"}
-            </li>
-          ))}
-        </ul>
+        <div>
+          <h2>TODO add 4 function and components one cards</h2>
+          <ul>
+            {items.map(item => (
+              <li key={item.id}>
+                {item.id} - {item.text}, {item.done? 'done': "don't done"}
+              </li>
+            ))}
+          </ul>
+        </div>
       );
     }
   }
 }
 
-export default MyComponent
+export default ApiFlask

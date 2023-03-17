@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import TimerMemory from "./A_TimerMemory"
 import Books from './Books'
-import MyComponent from './ApiDjango'
+import ApiFlask from './ApiFlask'
+import Imt from './CalculateImt'
 
 function RenderComponents () {
 
     const allComponents = [
         { key: "1", component: <Books />, name: "1 Books / useContext /" },
         { key: "2", component: <TimerMemory />, name: "2 TimerMemory" },
-        { key: "3", component: <MyComponent />, name: "3 ApiDjango" }
+        { key: "3", component: <Imt />, name: "3 Imt" },
+        { key: "4", component: <ApiFlask />, name: "4 ApiFlask" }
       ];
 
     const [hidden, setHidden] = React.useState(false)
