@@ -1,14 +1,17 @@
 
 import React from "react";
+import List from './ApiFlask/ListTodoApi'
 
 class ApiFlask extends React.Component {
+
     constructor(props) {
       super(props);
       this.state = {
         error: null,
         isLoaded: false,
-        items: []
+        items: [],
       };
+      this.updateInput = React.createRef('')
     }
 
     // create 4 function to manipulate ai data
@@ -47,6 +50,18 @@ class ApiFlask extends React.Component {
       )
   }
 
+
+  handleButtonClick(inputDate) {
+    // получаем кef input для формирования строки
+    const newToDo = {
+      id:this.state.items.length + 1,
+      text:inputDate.value,
+      done:false
+    }
+    console.log(newToDo)
+    inputDate.value = ''
+  }
+
   render() {
     const { error, isLoaded, items } = this.state;
     if (error) {
@@ -57,13 +72,9 @@ class ApiFlask extends React.Component {
       return (
         <div>
           <h2>TODO add 4 function and components one cards</h2>
-          <ul>
-            {items.map(item => (
-              <li key={item.id}>
-                {item.id} - {item.text}, {item.done? 'done': "don't done"}
-              </li>
-            ))}
-          </ul>
+          <input type="text" ref={this.updateInput} />
+          <button onClick={() => this.handleButtonClick(this.updateInput.current)} className="buttonAddTask">add new task</button>
+          <List items={items}/>
         </div>
       );
     }
