@@ -110,6 +110,7 @@ ol {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  align-items: center;
   border-radius: 5px;
   background-color: #18d8d1;
   padding: 0 5px 0 10px;
@@ -121,10 +122,15 @@ ol {
 	text-decoration-color: rgb(198, 198, 198);
 }
 
+.NotDone .Done i {
+  text-align: left;
+}
+
 .NotDone {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  align-items: center;
   border-radius: 5px;
   background-color: #18d8d1;
   padding: 0 5px 0 10px;
