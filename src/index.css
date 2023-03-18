@@ -122,7 +122,7 @@ ol {
 	text-decoration-color: rgb(198, 198, 198);
 }
 
-.NotDone .Done i {
+i {
   text-align: left;
 }
 
@@ -141,5 +141,10 @@ ol {
 }
 
 button {
+  cursor: pointer;
+}
+
+
+.StatusToDo {
   cursor: pointer;
 }
