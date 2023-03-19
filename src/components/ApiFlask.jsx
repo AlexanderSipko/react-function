@@ -19,15 +19,6 @@ class ApiFlask extends React.Component {
     }
     // create 4 function to manipulate ai data
 
-    // get https://py-todo-api-avsipko.amvera.io/todo/<id:int>
-    // write
-
-    // put https://py-todo-api-avsipko.amvera.io/todo/<id:int>
-    // update write
-
-    // delete https://py-todo-api-avsipko.amvera.io/todo/
-    // delete all
-
   handleButtonClick(inputDate) {
     // получаем кef input для формирования строки
       const newToDo = {
@@ -93,6 +84,22 @@ class ApiFlask extends React.Component {
    });
   }
 
+  putToDO = (id, body) => {
+    // put https://py-todo-api-avsipko.amvera.io/todo
+    // add new write
+    fetch(`https://py-todo-api-avsipko.amvera.io/todo/${id}`, {
+      method: "put",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    }).then( (response) => {
+      if (response.status === 200){
+        this.getList()
+      }
+   });
+  }
  
   render() {
     const { error, isLoaded, items } = this.state;
@@ -107,7 +114,7 @@ class ApiFlask extends React.Component {
           <p onClick={this.deleteToDO}>delete all list</p>
           <input type="text" ref={this.updateInput} />
           <button onClick={() => this.handleButtonClick(this.updateInput.current)} className="buttonAddTask">add new task</button>
-          <List items={items}/>
+          <List items={items} putToDO={this.putToDO}/>
         </div>
       );
     }
