@@ -158,3 +158,20 @@ button {
 .ToDoTaskP:hover {
   color: black;
 }
+
+.Description {
+  width: 90%;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.Description li:first-child {
+  font-size: 14px;
+  font-weight: bold;
+}

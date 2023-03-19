@@ -7,7 +7,7 @@ import Imt from './CalculateImt'
 function RenderComponents () {
 
     const allComponents = [
-        { key: "1", component: <Books />, name: "1 Books / useContext /" },
+        { key: "1", component: <Books />, name: "1 Список книг", },
         { key: "2", component: <TimerMemory />, name: "2 TimerMemory" },
         { key: "3", component: <Imt />, name: "3 Imt" },
         { key: "4", component: <ApiFlask />, name: "4 ApiFlask" }
@@ -47,7 +47,7 @@ function RenderComponents () {
 
     return (
         <div className="RenderList">
-            <h2>Render Other function</h2>
+            <h2>Разный функционал на React</h2>
             { allComponents.map((item) =>
                 <div key={item.key}>
                     <div className="NameButton">

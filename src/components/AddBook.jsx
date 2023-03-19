@@ -56,12 +56,13 @@ function AddBooksNew(props) {
     return (
             <div className="FormAddBook">
                 <p onClick={() => activeShow(false)} className="Remove" > X </p>
+                <h3>Добавьте новую запись</h3>
                 <input onKeyPress={handleKeyPress} onChange={handleChange} type="text" ref={refInput}/>
 
-                { (text !=='') && <button onClick={handleClick}>Add Book</button> }
-                { (currentText !=='') && <h3>success add: { currentText.title }</h3> }
+                { (text !=='') && <button onClick={handleClick}>Добавить</button> }
+                { (currentText !=='') && <h3>Запись добавлена: { currentText.title }</h3> }
 
-                <p className="NewId">show next id: { getNewID() }</p>
+                <p className="NewId">новый id: { getNewID() }</p>
             </div> 
     )
 }
