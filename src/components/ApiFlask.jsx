@@ -12,8 +12,9 @@ class ApiFlask extends React.Component {
           items: [],
         };
       this.updateInput = React.createRef('')
+      this.handleKeyPress = this.handleKeyPress.bind(this);
     }
-
+    
     componentDidMount() {
         this.getList()
     }
@@ -30,6 +31,19 @@ class ApiFlask extends React.Component {
     // console.log(JSON.stringify(newToDo))
     inputDate.value = ''
   }
+
+  handleKeyPress(event) {
+    // событие при нажатии Enter and input don't empty
+    if(event.key === 'Enter' & event.target.value !==''){
+        const newToDo = {
+          id: this.state.items.length + 1,
+          text:event.target.value,
+          done:false
+      }
+    this.addToDo(newToDo)
+        event.target.value = ''
+      }
+}
 
   getList = () => {
       // get https://py-todo-api-avsipko.amvera.io/todo
@@ -110,10 +124,10 @@ class ApiFlask extends React.Component {
     } else {
       return (
         <div>
-          <h2>TODO add 4 function and components one cards</h2>
-          <p onClick={this.deleteToDO}>delete all list</p>
-          <input type="text" ref={this.updateInput} />
-          <button onClick={() => this.handleButtonClick(this.updateInput.current)} className="buttonAddTask">add new task</button>
+          <h2>Задачи на день</h2>
+          <p className="ToDoTaskP" onClick={this.deleteToDO}>Удалить все записи</p>
+          <input type="text" onKeyPress={this.handleKeyPress} ref={this.updateInput} />
+          <button onClick={() => this.handleButtonClick(this.updateInput.current)} className="buttonAddTask">Добавить новую задачу</button>
           <List items={items} putToDO={this.putToDO}/>
         </div>
       );

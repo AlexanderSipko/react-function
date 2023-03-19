@@ -148,3 +148,13 @@ button {
 .StatusToDo {
   cursor: pointer;
 }
+
+
+.ToDoTaskP {
+  cursor: pointer;
+  color: gray;
+}
+
+.ToDoTaskP:hover {
+  color: black;
+}
