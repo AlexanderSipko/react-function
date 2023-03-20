@@ -8,8 +8,8 @@ function RenderComponents () {
 
     const allComponents = [
         { key: "1", component: <Books />, name: "1 Список книг", },
-        { key: "2", component: <TimerMemory />, name: "2 TimerMemory" },
-        { key: "3", component: <Imt />, name: "3 Imt" },
+        { key: "2", component: <TimerMemory />, name: "2 Таймер" },
+        { key: "3", component: <Imt />, name: "3 Расчет индекса массы тела" },
         { key: "4", component: <ApiFlask />, name: "4 ApiFlask" }
       ];
 

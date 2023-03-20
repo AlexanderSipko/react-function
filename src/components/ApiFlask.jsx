@@ -129,6 +129,18 @@ class ApiFlask extends React.Component {
           <input type="text" onKeyPress={this.handleKeyPress} ref={this.updateInput} />
           <button onClick={() => this.handleButtonClick(this.updateInput.current)} className="buttonAddTask">Добавить новую задачу</button>
           <List items={items} putToDO={this.putToDO}/>
+
+          <ul className="Description">
+            <li>описание функционала</li>
+            <li>1. возможность добавлять task</li>
+            <li>2. удаление всех task</li>
+            <li>3. ввод по enter and click button</li>
+            <li>4. проверка состояния input</li>
+            <li>5. update состояние tsk (true/false)</li>
+            <li>6. добавление времени выполнения и запись данных в API бэкенд</li>
+            <li>7. к TODO создано API на Flask (пишет в json файл)</li>
+            <li>8. API может не работать (закончилась подписка например и не успел перенести :)</li>
+          </ul>
         </div>
       );
     }

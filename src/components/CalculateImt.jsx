@@ -13,10 +13,16 @@ function Imt () {
 
     return (
         <div className="calculator__count-box" zn_id="28">
+            <h2>Рассчитать индекс массы тела</h2>
             <input type="text" ref={height}/>
             <input type="text" ref={weight}/>
-                <button onClick={calcIBM} >Рассчитать</button>
+                <button onClick={calcIBM} >Узнать результат</button>
             <p className="result">{result}</p>
+
+            <ul className="Description">
+                    <li>описание функционала</li>
+                    <li>1. расчет индекса массы тела</li>
+                </ul>
         </div>
     )
 }

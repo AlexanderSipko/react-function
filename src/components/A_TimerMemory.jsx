@@ -46,7 +46,7 @@ function TimerMemory () {
     return (
         
         <div>
-            <h3>Simple timer, start/stop and reset function. However create and write localStorage</h3>
+            <h3>Таймер</h3>
             {!isActive? (
                 <button onClick={handlerTimer} >Start</button>
                 ):(
@@ -54,6 +54,12 @@ function TimerMemory () {
             )}
                 <button  onClick={handlerReset} >Restart</button>
                 <h3>{second}</h3>
+
+                <ul className="Description">
+                    <li>описание функционала</li>
+                    <li>1. данные таймера пишутся в localStorage</li>
+                    <li>2. запуск/остановка таймера и возможность очистки локального хранилища</li>
+                </ul>
         </div>
     )
 }
