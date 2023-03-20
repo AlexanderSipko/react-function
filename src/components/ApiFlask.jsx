@@ -48,7 +48,9 @@ class ApiFlask extends React.Component {
   getList = () => {
       // get https://py-todo-api-avsipko.amvera.io/todo
       // all list
-      fetch('https://py-todo-api-avsipko.amvera.io/todo')
+      fetch('https://py-todo-api-avsipko.amvera.io/todo', {
+        method: "get",
+      })
         .then(res => res.json())
         .then((result) => {
           this.setState({
@@ -68,6 +70,7 @@ class ApiFlask extends React.Component {
   addToDo = (body) => {
     // post https://py-todo-api-avsipko.amvera.io/todo
     // add new write
+    
     fetch("https://py-todo-api-avsipko.amvera.io/todo", {
       method: "post",
       headers: {
@@ -78,6 +81,8 @@ class ApiFlask extends React.Component {
     }).then( (response) => {
       if (response.status === 201){
         this.getList()
+      } else {
+        console.log(response)
       }
    });
   }
@@ -87,10 +92,7 @@ class ApiFlask extends React.Component {
     // this.getList()
     fetch("https://py-todo-api-avsipko.amvera.io/todo", {
       method: "delete",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
+     
     }).then( (response) => {
       if (response.status === 200){
         this.getList()
@@ -105,7 +107,8 @@ class ApiFlask extends React.Component {
       method: "put",
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        "Authorization": "Basic dGVzdDp0ZXN0"
       },
       body: JSON.stringify(body)
     }).then( (response) => {
