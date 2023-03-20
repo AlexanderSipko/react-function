@@ -10,7 +10,7 @@ function RenderComponents () {
         { key: "1", component: <Books />, name: "1 Список книг", },
         { key: "2", component: <TimerMemory />, name: "2 Таймер" },
         { key: "3", component: <Imt />, name: "3 Расчет индекса массы тела" },
-        { key: "4", component: <ApiFlask />, name: "4 ApiFlask" }
+        { key: "4", component: <ApiFlask />, name: "4 Пример TODO с подключенным API" }
       ];
 
     const [hidden, setHidden] = React.useState(false)
@@ -62,6 +62,12 @@ function RenderComponents () {
                 </div>
                 )
             }
+            <ul className="Description">
+                <li>описание функционала</li>
+                <li>1. каждый блок содержит разные микро приложения на React</li>
+                <li>2. настроены кнопки показа и скрытия микроблоков</li>
+                <li>3. основная цель - обучение React</li>
+            </ul>
         </div>
     )
 }

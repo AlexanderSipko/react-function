@@ -20,9 +20,9 @@ function Imt () {
             <p className="result">{result}</p>
 
             <ul className="Description">
-                    <li>описание функционала</li>
-                    <li>1. расчет индекса массы тела</li>
-                </ul>
+                <li>описание функционала</li>
+                <li>1. расчет индекса массы тела</li>
+            </ul>
         </div>
     )
 }
