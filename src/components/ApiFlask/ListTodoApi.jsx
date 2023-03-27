@@ -30,11 +30,11 @@ function OneToDo(props) {
       <>
         { isDone? (
           <div id={id} className="Done"><i>{text}</i>
-            <span onClick={handlerClick} className="StatusToDo">&#9989;</span>
+            <span role="img" aria-label="donut" onClick={handlerClick} className="StatusToDo">&#9989;</span>
           </div>
         ):(
           <div id={id} className="NotDone"><i onClick={handlerClickText}>{text}</i>
-            <span onClick={handlerClick} className="StatusToDo">&#128205;</span>
+            <span role="img" aria-label="donut" onClick={handlerClick} className="StatusToDo">&#128205;</span>
           </div>
         )}
       </>
