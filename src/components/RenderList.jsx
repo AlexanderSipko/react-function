@@ -3,7 +3,7 @@ import TimerMemory from "./A_TimerMemory"
 import Books from './Books'
 import ApiFlask from './ApiFlask'
 import Imt from './CalculateImt'
-
+import BlinkyRender from './LoyAutEffect'
 
 function RenderComponents () {
 
@@ -12,6 +12,8 @@ function RenderComponents () {
         { key: "2", component: <TimerMemory />, name: "2 Таймер" },
         { key: "3", component: <Imt />, name: "3 Расчет индекса массы тела" },
         { key: "4", component: <ApiFlask />, name: "4 Пример TODO с подключенным API" },
+        { key: "5", component: <BlinkyRender />, name: "5 Пример работы useLoyautEffect" },
+
       ];
 
     const [hidden, setHidden] = React.useState(false)
