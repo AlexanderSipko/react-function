@@ -6,6 +6,7 @@ function BlinkyRender () {
     const [value, setValue] = React.useState(0)
 
     React.useLayoutEffect(() => {
+        // лучше использовать useEffect
         if (value === 0 ) {
             setValue(10 + Math.random() * 200)
         }
