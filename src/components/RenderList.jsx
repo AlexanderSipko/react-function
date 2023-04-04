@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import TimerMemory from "./A_TimerMemory"
 import Books from './Books'
 import ApiFlask from './ApiFlask'
 import Imt from './CalculateImt'
 import BlinkyRender from './LoyAutEffect'
 import MyComponent from './Reduser'
+import Counter from './ReduserContext/reduser'
+import {NumberContext} from './ReduserContext/numberContext'
 
 function RenderComponents () {
+
+    const { state } = useContext(NumberContext); 
 
     const allComponents = [
         { key: "1", component: <Books />, name: "1 Список книг", },
@@ -15,6 +19,7 @@ function RenderComponents () {
         { key: "4", component: <ApiFlask />, name: "4 Пример TODO с подключенным API" },
         { key: "5", component: <BlinkyRender />, name: "5 Пример работы useLoyautEffect" },
         { key: "6", component: <MyComponent />, name: "6 Хук useReduser" },
+        { key: "7", component: <Counter />, name: "7 useContext useReduser" },
       ];
 
     const [hidden, setHidden] = React.useState(false)
@@ -52,6 +57,7 @@ function RenderComponents () {
     return (
         <div className="RenderList">
             <h2>Разный функционал на React</h2>
+            <p>Значение в контексте 7 модуля - {state.value}</p>
             { allComponents.map((item) =>
                 <div key={item.key}>
                     <div className="NameButton">
