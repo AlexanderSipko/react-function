@@ -6,6 +6,7 @@ export const initialState = {
     second:0
 }
 
+
 function reducer(state, action) {
     switch (action.type) {
         case 'initSecond':
@@ -20,7 +21,7 @@ function reducer(state, action) {
         case 'increment':
             return {...state, second: state.second + 1};
     default:
-            throw new Error();
+        return state;
     }
 }
 
@@ -47,7 +48,7 @@ function TimerMemory () {
 
     useEffect(() => {
         // управление интервалом по активации Start Stop
-        let timerId = ''
+        let timerId = null
         if (state.isActive) {
             timerId = setInterval(() => {
                 // setSecond(secondes => +secondes + 1)
@@ -56,7 +57,10 @@ function TimerMemory () {
         } else if (!state.isActive) {
             clearInterval(timerId)
         }
-        return () => clearInterval(timerId)
+        return () => {
+            timerId && clearInterval(timerId);
+            timerId = null
+        }
     }, [state.isActive])
 
     useEffect(() => {
