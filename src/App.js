@@ -4,7 +4,6 @@ import RenderList from './components/RenderList'
 import { NumberProvider } from './components/ReduserContext/numberContext'
 
 function App() {
-
   return (
     <NumberProvider>
       <div className="App">
